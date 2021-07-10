@@ -1,0 +1,7 @@
+php artisan make:migration create_flights_table
+php artisan migrate
+php artisan migrate --path=/database/migrations/test/
+
+
+php artisan make:model Flight --controller
+php artisan make:model Flight --migration
