@@ -39,3 +39,9 @@ function alert($message)
     </button>
   </div>';
 }
+
+function is_delete($tabul,$id)
+{
+  $result = DB::table($tabul)->where('id', $id)->update(['isdelete' => "1"]);
+  return $result;
+}

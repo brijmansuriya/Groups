@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategaryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\categoryController;
+use App\Http\Controllers\Admin\PhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +32,13 @@ Route::get('/clr', function () {
 });
 
 
-Route::group(['prefix' => 'admin/categary'], function () {
-    Route::get('/', [CategaryController::class, 'index']);
-    Route::get('/add',[CategaryController::class, 'add']);
-    Route::post('/save',[CategaryController::class, 'save']);
+Route::group(['prefix' => 'admin/category'], function () {
+    Route::get('/', [categoryController::class, 'index']);
+    Route::get('/add',[categoryController::class, 'add']);
+    Route::get('/add/{id}',[categoryController::class, 'add']);
+    Route::post('/save',[categoryController::class, 'save']);
+    Route::get('/delete/{id}',[categoryController::class, 'delete']);
 });
+
+Route::view('/demo', 'AddGroup');
+Route::get('/kd', [PhotoController::class, 'index']);

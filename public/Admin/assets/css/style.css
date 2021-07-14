@@ -3235,9 +3235,12 @@ pre {
   color: #212529; }
   .table th,
   .table td {
-    padding: 0.9375rem;
+    /* assets/css/style.css */
+    padding: 0.4205rem;
     vertical-align: top;
-    border-top: 1px solid #ebedf2; }
+    border-top: 1px solid #ebedf2;
+    text-align: center;
+   }
   .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #ebedf2; }
@@ -10144,6 +10147,7 @@ body {
 .form-control,
 .form-control:focus {
   -webkit-box-shadow: none;
+  box-shadow: none;
   -moz-box-shadow: none; }
 
 .form-control {
@@ -11187,8 +11191,8 @@ code {
     padding: 0.5rem 0.75rem;
     font-size: 0.625rem; }
   .btn.btn-icon {
-    width: 42px;
-    height: 42px;
+    width: 37px;
+    height: 33px;
     padding: 0; }
   .btn.btn-icon-text .btn-icon-prepend {
     margin-right: .5rem; }
@@ -13528,7 +13532,8 @@ dl {
   .rtl .sidebar-fixed .nav::-webkit-scrollbar-track,
   .rtl .table-responsive::-webkit-scrollbar-track,
   .rtl ul.chats::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); 
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);}
   .rtl .product-chart-wrapper::-webkit-scrollbar-thumb,
   .rtl .sidebar-fixed .nav::-webkit-scrollbar-thumb,
   .rtl .table-responsive::-webkit-scrollbar-thumb,

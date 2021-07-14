@@ -3,7 +3,7 @@
 
      <!-- Group Form -->
         <!-- ======= Frequently Asked Questions Section ======= -->
-        <section id="" class="faq pricing">
+        <section id="" class="mt-5 pricing">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
