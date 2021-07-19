@@ -29,7 +29,6 @@ function StringRepair($temptext)
     return $temptext;
 }
 
-
 function alert($message)
 {
     echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -40,8 +39,24 @@ function alert($message)
   </div>';
 }
 
-function is_delete($tabul,$id)
+function is_delete($tabul, $id)
 {
-  $result = DB::table($tabul)->where('id', $id)->update(['isdelete' => "1"]);
-  return $result;
+    $result = DB::table($tabul)->where('id', $id)->update(['isdelete' => "1"]);
+    return $result;
 }
+function getdata($tabul)
+{
+    $result = DB::table($tabul)->where('isdelete', 0)->orderBy('id', 'DESC')->get();
+    return $result;
+}
+function getdataw($tabul,$colume,$condition,$table2)
+{
+    $result = DB::table($tabul)
+        ->leftJoin($table2, $tabul.'.cat_id', '=', $table2.'.id')
+        ->select($tabul.'.*', $table2.'.*')
+        ->where($tabul.'.'.$colume,$condition)
+        ->orderBy($tabul.'.id', 'DESC')
+        ->get();
+    return $result;
+}
+

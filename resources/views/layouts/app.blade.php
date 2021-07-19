@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Admin') }}</title>
+    <title>G</title>
     <!-- plugins:css -->
     @yield('css')
     <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
@@ -55,19 +55,19 @@
                             </div>
                         </a>
                         <?php /*
-                                                <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                                                    <a class="dropdown-item" href="#">
-                                                        <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
-                        
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                            @csrf
-                                                        </form>
-                                                        <i class="mdi mdi-logout mr-2 text-primary"></i> Signout
-                                                    </a>
-                                                </div>
-                                                */
+                            <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
+    
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                    <i class="mdi mdi-logout mr-2 text-primary"></i> Signout
+                                </a>
+                            </div>
+                            */
                         ?>
 
                     </li>
@@ -219,7 +219,7 @@
                 <ul class="nav">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{ url('/home') }}">
                             <span class="menu-title">Dashboard</span>
                             <i class="mdi mdi-home menu-icon"></i>
                         </a>
@@ -227,7 +227,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('admin/category') }}">
-                            <span class="menu-title">category</span>
+                            <span class="menu-title">Category</span>
                             <i class="mdi mdi-buffer menu-icon"></i>
                         </a>
                     </li>

@@ -66,7 +66,8 @@ $page = 'Category';
               <a href="{{ url('admin/category/add/') }}/{{ $list->id }}">
               <button type="button" class="btn btn-inverse-success btn-icon"><i
                 class="mdi mdi-grease-pencil"></i></button></a>
-              <a href="{{ url('admin/category/delete/') }}/{{ $list->id }}">
+                {{-- href="{{ url('admin/category/delete/') }}/{{ $list->id }}" --}}
+              <a  data-id="{{ $list->id }}" data-action="#" onclick="deleteConfirmation({{$list->id}})">
               <button type="button" class="btn btn-inverse-danger btn-icon"><i
                 class="mdi mdi-delete-forever"></i></button></a>
             </td>
@@ -87,4 +88,41 @@ $page = 'Category';
 {{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> --}}
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+
+
+<script>
+  function deleteConfirmation(id) {
+        swal({
+            title: "Delete?",
+            text: "Please ensure and then confirm!",
+            type: "warning",
+            showCancelButton: !0,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: !0
+        }).then(function(e) {
+
+            if (e.value === true) {
+                var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+                window.location.href = "{{url('admin/category/delete/')}}/" + id
+                
+            } else {
+                swal({
+                    title: "Cancelled",
+                    text: "Your Records are safe :)",
+                    type: "error",
+                    confirmButtonClass: "btn-danger"
+                });
+            }
+
+        }, function(dismiss) {
+            return false;
+        })
+    }
+</script>
+
 @endsection

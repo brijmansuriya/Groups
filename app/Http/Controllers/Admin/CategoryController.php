@@ -14,14 +14,12 @@ class CategoryController extends Controller
 
     public function __construct()
     {
-        // $this->categoryModel = new CategoryModel();
+        $this->CategoryModel = new CategoryModel();
         $this->middleware('auth');
     }
     public function index()
     {
-        
         $result['categorydata'] = DB::table('tbl_category')->where('isdelete', 0)->orderBy('id', 'DESC')->get();
-
         return view('admin/category/index', $result);
     }
     public function add($id = '')
@@ -32,26 +30,23 @@ class CategoryController extends Controller
             return view('admin/category/add', $result);
         }
         $result['id'] = '';
-        return view('admin/category/add',$result);
+        return view('admin/category/add', $result);
 
     }
     public function save(Request $Request)
     {
-
         $Request->validate([
             'category' => 'required',
             'Slug' => 'required|unique:tbl_category,slug,' . $Request->id,
-
         ]);
 
         $id = $Request->id;
         if ($id != '') {
-            
-            $this->categoryModel->updateRecord($Request);
+
+            $this->CategoryModel->updateRecord($Request);
             $message = 'updated Successfully';
         } else {
-            $this->categoryModel = new categoryModel();
-            $id = $this->categoryModel->insert($Request);
+            $id = $this->CategoryModel->insert($Request);
             $message = 'Added Successfully';
         }
         $Request->session()->flash('message', $message);
@@ -60,9 +55,7 @@ class CategoryController extends Controller
     public function delete($id)
     {
         $result = is_delete($this->table, $id);
-
-        pr($result);
-        return redirect('Process/');
+        return redirect('admin/category');
     }
 
 }

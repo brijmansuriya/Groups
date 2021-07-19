@@ -10,26 +10,30 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{asset('Frontend/assets/img/favicon.png')}}" rel="icon">
-    <link href="{{asset('Frontend/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+    <link href="{{ asset('Frontend/assets/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('Frontend/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{asset('Frontend/assets/vendor/aos/aos.css')}}" rel="stylesheet">
-    <link href="{{asset('Frontend/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('Frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-    <link href="{{asset('Frontend/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-    <link href="{{asset('Frontend/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
-    <link href="{{asset('Frontend/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
-    <link href="{{asset('Frontend/assets/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
-    <link href="{{asset('Frontend/assets/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
-    <link href="{{asset('Frontend/assets/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{ asset('Frontend/assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('Frontend/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('Frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('Frontend/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('Frontend/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('Frontend/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('Frontend/assets/vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('Frontend/assets/vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet"
+        media="all">
+    <link href="{{ asset('Frontend/assets/vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet"
+        media="all">
     <!-- Template Main CSS File -->
-    <link href="{{asset('Frontend/assets/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('Frontend/assets/css/main.css')}}" rel="stylesheet" media="all">
+    <link href="{{ asset('Frontend/assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('Frontend/assets/css/main.css') }}" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="{{ asset('Admin/assets/castam.css') }}">
+    @yield('css')
 </head>
 
 <body>
@@ -40,11 +44,13 @@
             <h1 class="logo"><a href="index.html">Group World</a></h1>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#faq">F&Q</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+                    <li><a class="nav-link scrollto active" href="{{ url('/') }}">Home</a></li>
+                    @if (Request::segment(1) != 'AddGroup')
+                        <li><a class="nav-link scrollto" href="#about">About</a></li>
+                        <li><a class="nav-link scrollto" href="#faq">F&Q</a></li>
+                        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    @endif
+                    <li><a class="getstarted scrollto" href="{{ url('/AddGroup') }}">Get Started</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -134,22 +140,22 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
-    <script src="{{asset('Frontend/assets/vendor/aos/aos.js')}}"></script>
-    <script src="{{asset('Frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('Frontend/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
-    <script src="{{asset('Frontend/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-    <script src="{{asset('Frontend/assets/vendor/php-email-form/validate.js')}}"></script>
-    <script src="{{asset('Frontend/assets/vendor/purecounter/purecounter.js')}}"></script>
-    <script src="{{asset('Frontend/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+    <script src="{{ asset('Frontend/assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('Frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('Frontend/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('Frontend/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('Frontend/assets/vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ asset('Frontend/assets/vendor/purecounter/purecounter.js') }}"></script>
+    <script src="{{ asset('Frontend/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
     <!-- Jquery JS-->
-    <script src="{{asset('Frontend/assets/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{ asset('Frontend/assets/vendor/jquery/jquery.min.js') }}"></script>
     <!-- Vendor JS-->
-    <script src="{{asset('Frontend/assets/vendor/select2/select2.min.js')}}"></script>
+    <script src="{{ asset('Frontend/assets/vendor/select2/select2.min.js') }}"></script>
     <!-- Main JS-->
-    <script src="{{asset('Frontend/assets/js/global.js')}}"></script>
+    <script src="{{ asset('Frontend/assets/js/global.js') }}"></script>
     <!-- Template Main JS File -->
-    <script src="{{asset('Frontend/assets/js/main.js')}}"></script>
-
+    <script src="{{ asset('Frontend/assets/js/main.js') }}"></script>
+    @yield('js')
 </body>
 
 </html>
