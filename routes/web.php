@@ -61,8 +61,8 @@ Route::group(['prefix' => 'admin/addgroup'], function () {
 
 Route::group(['prefix' => 'admin/type'], function () {
     Route::get('/', [TypeController::class, 'index']);
-    Route::get('/add', [TypeController::class, 'AdminGroupAdd']);
-    Route::get('/add/{id}', [TypeController::class, 'AdminGroupAdd']);
+    Route::get('/add', [TypeController::class, 'add']);
+    Route::get('/add/{id}', [TypeController::class, 'add']);
     Route::post('/save', [TypeController::class, 'save']);
     Route::get('/delete/{id}', [TypeController::class, 'delete']);
 });

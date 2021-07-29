@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class TypeModel extends Model
 {
-    public $table="tbl_type";
-   
+    protected  $table="tbl_type";
+    // public $timestamps = false;
+    // protected $dateFormat = 'U';
+    protected $attributes = [
+        'delayed' => false,
+    ];
 }

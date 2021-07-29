@@ -1,8 +1,5 @@
 @extends('layouts.app')
 @section('css')
-{{-- 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
---}}
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
 @endsection
 @section('content')
@@ -46,7 +43,6 @@ $page = 'Category';
           <tr>
             <th> # </th>
             <th> Category Name </th>
-            <th> Category </th>
             <th> Action </th>
           </tr>
         </thead>
@@ -60,13 +56,11 @@ $page = 'Category';
           @endphp
           <tr>
             <td class="py-1">{{ $i }}</td>
-            <td>{{ $list->name }} </td>
-            <td>{{ $list->slug }}</td>
+            <td>{{ $list->type_name }} </td>
             <td>
-              <a href="{{ url('admin/category/add/') }}/{{ $list->id }}">
+              <a href="{{ url('admin/type/add/') }}/{{ $list->id }}">
               <button type="button" class="btn btn-inverse-success btn-icon"><i
                 class="mdi mdi-grease-pencil"></i></button></a>
-                {{-- href="{{ url('admin/category/delete/') }}/{{ $list->id }}" --}}
               <a  data-id="{{ $list->id }}" data-action="#" onclick="deleteConfirmation({{$list->id}})">
               <button type="button" class="btn btn-inverse-danger btn-icon"><i
                 class="mdi mdi-delete-forever"></i></button></a>
@@ -85,14 +79,10 @@ $page = 'Category';
       $('#example').DataTable();
   });
 </script>
-{{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> --}}
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
-
-
 <script>
   function deleteConfirmation(id) {
         swal({
@@ -108,7 +98,7 @@ $page = 'Category';
             if (e.value === true) {
                 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
-                window.location.href = "{{url('admin/category/delete/')}}/" + id
+                window.location.href = "{{url('admin/type/delete/')}}/" + id
                 
             } else {
                 swal({
