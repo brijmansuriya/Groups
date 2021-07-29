@@ -1,4 +1,22 @@
 @extends('layouts.appf')
+
+@section('css')
+<style>
+.gimg{
+    width: 100px;
+    height: 100px;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background: linear-gradient(42deg, #5846f9 0%, #7b27d8 100%);
+    border-color: #ffffff;
+    font-size: 12px;
+}
+
+</style>
+
+@endsection
 @section('content')
 
     <!-- ======= Hero Section ======= -->
@@ -33,27 +51,36 @@
                         in iste officiis commodi quidem hic quas.</p>
                 </div>
 
+@isset($whatsapp['0']->id)
                 <div class="row">
-                   {{ pr($whatsapp)}}
                     @foreach ($whatsapp as $wpg)
-                    <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+                 
+                    <div class="col-lg-3 col-md-6 mt-4 mb-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
                         <div class="box whatsapp">
                             {{-- <span class="advanced">New</span> --}}
                             <h3>{{$wpg->name}}</h3>
-                            <h4><sup>$</sup>49<span> / month</span></h4>
-                            <img href="{{$wpg->gimg}}" />
+                            @if ($wpg->gimg == '')
+                                <img src="Gimg/1626878239.jpg" class="gimg mb-2" />
+                            @else
+                                <img src="Gimg/{{$wpg->gimg}} " class="gimg mb-3" />
+                            @endif
                             <ul>
                                 <li>{{$wpg->gname}}</li>
-                              
+                                
                             </ul>
                             <div class="btn-wrap">
-                                <a href="#" class="btn-buyw">Join Now</a>
+                                <a href="{{$wpg->url}}" target="_blank" class="btn-buyw">Join Now</a>
                             </div>
                         </div>
                     </div>
                     @endforeach
                     
+                    <div class="d-flex justify-content-center">
+                        {{ $whatsapp->links("pagination::bootstrap-4") }}
+                    </div>
+                  
                 </div>
+                @endisset
             </div>
             <!-- Telegram Channel -->
 
@@ -71,28 +98,39 @@
                         Quia fugiat sit
                         in iste officiis commodi quidem hic quas.</p>
                 </div>
+                
 
-                <div class="row">
 
-                    <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-                        <div class="box featured">
-                            <span class="advanced">New</span>
-                            <h3>Ultimate</h3>
-                            <h4><sup>$</sup>49<span> / month</span></h4>
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li>Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Join Now</a>
-                            </div>
-                        </div>
-                    </div>
+                @isset($telegram['0']->id)
+
+
+    <div class="row">
+
+        @foreach ($telegram as $tel)
+        <div class="col-lg-3 col-md-6 mt-4 mb-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+            <div class="box featured">
+                {{-- <span class="advanced">New</span> --}}
+                <h3>{{$tel->name}}</h3>
+                @if ($tel->gimg == '')
+                    <img src="Gimg/1626878239.jpg" class="gimg" />
+                @else
+                    <img src="Gimg/{{$tel->gimg}} " class="gimg" />
+                @endif
+                <ul>
+                    <li>{{$tel->gname}}</li>
+                </ul>
+                <div class="btn-wrap">
+                    <a href="{{$tel->url}}" target="_blank" class="btn-buy">Join Now</a>
                 </div>
             </div>
+        </div>
+        @endforeach
+        {{ $telegram->links("pagination::bootstrap-4") }}
+    </div>
+    @endisset
+</div>
+
+               
             <!-- Telegram Channel -->
 
         </section><!-- End Pricing Section -->

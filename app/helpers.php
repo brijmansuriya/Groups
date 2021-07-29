@@ -6,20 +6,6 @@ function pr($data)
     exit;
 }
 
-function editbox($colname, $label, $fieldname, $placeholder, $value, $script = "")
-{
-    $isrequired = strpos($script, "required");
-    if (is_numeric($isrequired)) {
-        $label .= " <b class='text-danger'>*</b>";
-    }
-    echo '<div class="col-md-' . $colname . '">
-              <fieldset class="form-group">
-              <label class="form-label semibold">' . $label . '</label>
-              <input type="text" ' . $script . ' name="' . $fieldname . '" value="' . $value . '" id="' . $fieldname . '" placeholder ="' . $placeholder . '" class="form-control">
-              </fieldset>
-            </div>';
-}
-
 function StringRepair($temptext)
 {
     $temptext = trim($temptext);
@@ -49,14 +35,19 @@ function getdata($tabul)
     $result = DB::table($tabul)->where('isdelete', 0)->orderBy('id', 'DESC')->get();
     return $result;
 }
-function getdataw($tabul,$colume,$condition,$table2)
+
+function editbox($colname, $label, $fieldname, $placeholder, $value, $script = "")
 {
-    $result = DB::table($tabul)
-        ->leftJoin($table2, $tabul.'.cat_id', '=', $table2.'.id')
-        ->select($tabul.'.*', $table2.'.*')
-        ->where($tabul.'.'.$colume,$condition)
-        ->orderBy($tabul.'.id', 'DESC')
-        ->get();
-    return $result;
+    $isrequired = strpos($script, "required");
+    if (is_numeric($isrequired)) {
+        $label .= " <b class='text-danger'>*</b>";
+    }
+    echo '<div class="col-md-' . $colname . '">
+              <fieldset class="form-group">
+              <label class="form-label semibold">' . $label . '</label>
+              <input type="text" ' . $script . ' name="' . $fieldname . '" value="' . $value . '" id="' . $fieldname . '" placeholder ="' . $placeholder . '" class="form-control">
+              </fieldset>
+            </div>';
 }
+
 

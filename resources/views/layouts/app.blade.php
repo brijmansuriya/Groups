@@ -7,14 +7,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>G</title>
     <!-- plugins:css -->
-    @yield('css')
     <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('Admin/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('Admin/assets/images/favicon.ico') }}">
     <link rel="stylesheet" href="{{ asset('Admin/assets/castam.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('Frontend/assets/vendor/select2/select2.min.css') }}"  media="all">
+    @yield('css')
 </head>
 
 <body>
@@ -231,6 +231,31 @@
                             <i class="mdi mdi-buffer menu-icon"></i>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('admin/addgroup') }}">
+                            <span class="menu-title">Group</span>
+                            <i class="mdi mdi-buffer menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('admin/type') }}">
+                            <span class="menu-title">Type</span>
+                            <i class="mdi mdi-buffer menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                          <span class="menu-title">Basic Settings</span>
+                          <i class="menu-arrow"></i>
+                          <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic" style="">
+                          <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="">Site Name</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="">Typography</a></li>
+                          </ul>
+                        </div>
+                      </li>
 
                 </ul>
             </nav>
@@ -256,7 +281,8 @@
     <script src="{{ asset('Admin/assets/js/misc.js') }}"></script>
     <script src="{{ asset('Admin/assets/js/dashboard.js') }}"></script>
     <script src="{{ asset('Admin/assets/js/todolist.js') }}"></script>
-
+    <script src="{{ asset('Frontend/assets/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('Frontend/assets/vendor/select2/select2.min.js') }}"></script>
     @yield('js')
 </body>
 

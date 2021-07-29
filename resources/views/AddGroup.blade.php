@@ -98,7 +98,6 @@
                                             <div class="rs-select2 js-select-simple" >
                                                 <select name="cat_id" required>
                                                     <option disabled="disabled" value="">Select Categoris</option>
-                                                   
                                                     @foreach ($category as $cat)
                                                         <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                                                     @endforeach

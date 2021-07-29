@@ -8,11 +8,11 @@
       <meta name="csrf-token" content="{{ csrf_token() }}">
       <title>{{ config('app.name', 'Admin') }}</title>
           <!-- plugins:css -->
-          <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
-          <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
-          <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
-          <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-          <link rel="stylesheet" href="{{asset('assets/images/favicon.ico')}}">
+          <link rel="stylesheet" href="{{asset('Admin/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
+          <link rel="stylesheet" href="{{asset('Admin/assets/vendors/css/vendor.bundle.base.css')}}">
+          <link rel="stylesheet" href="{{asset('Admin/assets/vendors/css/vendor.bundle.base.css')}}">
+          <link rel="stylesheet" href="{{asset('Admin/assets/css/style.css')}}">
+          <link rel="stylesheet" href="{{asset('Admin/assets/images/favicon.ico')}}">
   </head>
   <body>
                 <div class="container-scroller">
@@ -22,7 +22,7 @@
                         <div class="col-lg-4 mx-auto">
                             <div class="auth-form-light text-left p-5">
                             <div class="brand-logo">
-                                <img src="../../assets/images/logo.svg">
+                                <img src="Admin/assets/images/logo.svg">
                             </div>
                             <h4>New here?</h4>
                             <form class="pt-3"  method="POST" action="{{ route('register') }}">
@@ -91,13 +91,13 @@
                     </div>
                 </footer>
               <!-- partial -->
-      <script src="{{asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
-      <script src="{{asset('assets/vendors/chart.js/Chart.min.js')}}"></script>
-      <script src="{{asset('assets/js/off-canvas.js')}}"></script>
-      <script src="{{asset('assets/js/hoverable-collapse.js')}}"></script>
-      <script src="{{asset('assets/js/misc.js')}}"></script>
-      <script src="{{asset('assets/js/dashboard.js')}}"></script>
-      <script src="{{asset('assets/js/todolist.js')}}"></script>
+      <script src="{{asset('Admin/assets/vendors/js/vendor.bundle.base.js')}}"></script>
+      <script src="{{asset('Admin/assets/vendors/chart.js/Chart.min.js')}}"></script>
+      <script src="{{asset('Admin/assets/js/off-canvas.js')}}"></script>
+      <script src="{{asset('Admin/assets/js/hoverable-collapse.js')}}"></script>
+      <script src="{{asset('Admin/assets/js/misc.js')}}"></script>
+      <script src="{{asset('Admin/assets/js/dashboard.js')}}"></script>
+      <script src="{{asset('Admin/assets/js/todolist.js')}}"></script>
   </body>
   </html>
   

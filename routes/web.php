@@ -1,11 +1,17 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Admin\categoryController;
-use App\Http\Controllers\Admin\PhotoController;
+//Home
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FrontendController;
+//Admin
+use App\Http\Controllers\Admin\categoryController;
+use App\Http\Controllers\Admin\AddGroupController;
+use App\Http\Controllers\Admin\PhotoController;
+use App\Http\Controllers\Admin\TypeController;
 
-use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +31,9 @@ Route::get('/', [FrontendController::class, 'index']);
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index']);
 Route::view('demo', 'auth/register');
+Route::get('/AddGroup', [FrontendController::class, 'addGroup']);
+Route::post('/savegroup', [FrontendController::class, 'savegroup']);
+Route::post('/importExcel', [FrontendController::class, 'importExcel']);
 
 //cler
 Route::get('/clr', function () {
@@ -42,6 +51,21 @@ Route::group(['prefix' => 'admin/category'], function () {
     Route::get('/delete/{id}', [categoryController::class, 'delete']);
 });
 
-Route::get('/AddGroup', [FrontendController::class, 'addGroup']);
-Route::post('/savegroup', [FrontendController::class, 'savegroup']);
+Route::group(['prefix' => 'admin/addgroup'], function () {
+    Route::get('/', [AddGroupController::class, 'AdminAddGroup']);
+    Route::get('/add', [AddGroupController::class, 'AdminGroupAdd']);
+    Route::get('/add/{id}', [AddGroupController::class, 'AdminGroupAdd']);
+    Route::post('/save', [AddGroupController::class, 'save']);
+    Route::get('/delete/{id}', [AddGroupController::class, 'delete']);
+});
+
+Route::group(['prefix' => 'admin/type'], function () {
+    Route::get('/', [TypeController::class, 'index']);
+    Route::get('/add', [TypeController::class, 'AdminGroupAdd']);
+    Route::get('/add/{id}', [TypeController::class, 'AdminGroupAdd']);
+    Route::post('/save', [TypeController::class, 'save']);
+    Route::get('/delete/{id}', [TypeController::class, 'delete']);
+});
+
+
 
