@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\categoryController;
 use App\Http\Controllers\Admin\AddGroupController;
 use App\Http\Controllers\Admin\PhotoController;
 use App\Http\Controllers\Admin\TypeController;
+use App\Http\Controllers\Admin\SettingController;
 
 
 
@@ -65,7 +66,16 @@ Route::group(['prefix' => 'admin/type'], function () {
     Route::get('/add/{id}', [TypeController::class, 'add']);
     Route::post('/save', [TypeController::class, 'save']);
     Route::get('/delete/{id}', [TypeController::class, 'delete']);
+    Route::post('/disabled/{id}', [TypeController::class, 'disabled']);
 });
 
+Route::group(['prefix' => 'admin/setting'], function () {
+    Route::get('/websitename', [SettingController::class, 'websitename']);
+    Route::post('/websitenamesave', [SettingController::class, 'websitenamesave']);
+    Route::get('/add', [SettingController::class, 'add']);
+    Route::get('/add/{id}', [SettingController::class, 'add']);
+    Route::post('/save', [SettingController::class, 'save']);
+    Route::get('/delete/{id}', [SettingController::class, 'delete']);
+});
 
 

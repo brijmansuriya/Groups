@@ -1,11 +1,14 @@
 <!doctype html>
+@php 
+$cdata = getcom()
+@endphp
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>G</title>
+    <title>{{ print_r( $cdata[1]->vel )}}</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/css/vendor.bundle.base.css') }}">
@@ -18,6 +21,8 @@
 </head>
 
 <body>
+  
+    
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -234,29 +239,34 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('admin/addgroup') }}">
                             <span class="menu-title">Group</span>
-                            <i class="mdi mdi-buffer menu-icon"></i>
+                            <i class="mdi mdi-whatsapp menu-icon"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('admin/type') }}">
                             <span class="menu-title">Type</span>
-                            <i class="mdi mdi-buffer menu-icon"></i>
+                            <i class="mdi mdi-gender-transgender menu-icon"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link collapsed" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                          <span class="menu-title">Basic Settings</span>
+                        <a class="nav-link" href="{{ url('admin/setting/websitename') }}">
+                            <span class="menu-title">Basic Setting</span>
+                            <i class="mdi mdi-gender-transgender menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                          <span class="menu-title">Basic Setting</span>
                           <i class="menu-arrow"></i>
                           <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                         </a>
-                        <div class="collapse" id="ui-basic" style="">
+                        <div class="collapse" id="ui-basic">
                           <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="">Site Name</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('admin/setting/websitename') }}">Site Name</a></li>
                             <li class="nav-item"> <a class="nav-link" href="">Typography</a></li>
                           </ul>
                         </div>
                       </li>
-
                 </ul>
             </nav>
             <!-- partial -->
@@ -279,7 +289,7 @@
     <script src="{{ asset('Admin/assets/js/off-canvas.js') }}"></script>
     <script src="{{ asset('Admin/assets/js/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('Admin/assets/js/misc.js') }}"></script>
-    <script src="{{ asset('Admin/assets/js/dashboard.js') }}"></script>
+   
     <script src="{{ asset('Admin/assets/js/todolist.js') }}"></script>
     <script src="{{ asset('Frontend/assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('Frontend/assets/vendor/select2/select2.min.js') }}"></script>

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
         <div class="content-wrapper">
           <div class="row" id="proBanner">
             <div class="col-12">
@@ -323,4 +324,7 @@
             </div>
           </div>
         </div>
+@endsection
+@section('js')
+<script src="{{ asset('Admin/assets/js/dashboard.js') }}"></script>
 @endsection

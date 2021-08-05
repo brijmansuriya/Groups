@@ -5,8 +5,8 @@ namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TypeModel extends Model
+class SettingModel extends Model
 {
-    protected  $table="tbl_type";
+    protected  $table="tbl_Setting";
     
 }
