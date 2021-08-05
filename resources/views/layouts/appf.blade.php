@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+@php 
+$cdata = getcom()
+@endphp
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -41,13 +43,13 @@
     <!-- ======= Header ======= -->
     <header id="header" class="faq fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo"><a href="index.html">Group World</a></h1>
+            <h1 class="logo"><a href="index.html">{{pr($cdata['3'])}}</a></h1>
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="{{ url('/') }}">Home</a></li>
                     @if (Request::segment(1) != 'AddGroup')
                         <li><a class="nav-link scrollto" href="#about">About</a></li>
-                        <li><a class="nav-link scrollto" href="#faq">F&Q</a></li>
+                        {{-- <li><a class="nav-link scrollto" href="#faq">F&Q</a></li> --}}
                         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                     @endif
                     <li><a class="getstarted scrollto" href="{{ url('/AddGroup') }}">Get Started</a></li>
@@ -116,11 +118,11 @@
             <div class="copyright-wrap d-md-flex py-4">
                 <div class="me-md-auto text-center text-md-start">
                     <div class="copyright">
-                        &copy; Copyright <strong><span>Techie</span></strong>. All Rights Reserved
+                        &copy; Copyright <strong><span>{{pr($cdata['3'])}}</span></strong>. All Rights Reserved
                     </div>
                     <div class="credits">
 
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        Designed by <a href="https://bootstrapmade.com/">{{pr($cdata['3'])}}</a>
                     </div>
                 </div>
                 <div class="social-links text-center text-md-right pt-3 pt-md-0">

@@ -1,9 +1,14 @@
 <?php
-function pr($data)
+function prx($data)
 {
     echo "<pre>";
     print_r($data);
     exit;
+}
+
+function pr($data)
+{
+    print_r($data);
 }
 
 function StringRepair($temptext)
@@ -52,7 +57,7 @@ function editbox($colname, $label, $fieldname, $placeholder, $value, $script = "
 function getcom()
 {
     $result = array();
-    $result = DB::table('tbl_setting')->select('id','key','vel')->where('isdelete', 0)->get();
+    $result = DB::table('tbl_setting')->select('id','key','vel')->where('isdelete', 0)->first();
     $i=0;
     foreach ($result as $item) {
         $i++;

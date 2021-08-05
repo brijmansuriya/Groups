@@ -8,7 +8,7 @@ $cdata = getcom()
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ print_r( $cdata[1]->vel )}}</title>
+    <title>{{pr($cdata['3'])}}</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/css/vendor.bundle.base.css') }}">
@@ -21,16 +21,15 @@ $cdata = getcom()
 </head>
 
 <body>
-  
-    
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="index.html"><img
+                {{-- <a class="navbar-brand brand-logo" href="index.html"><img
                         src="{{ asset('Admin/assets/images/logo.svg') }}" alt="logo" /></a>
                 <a class="navbar-brand brand-logo-mini" href="index.html"><img
-                        src="{{ asset('Admin/assets/images/logo-mini.svg') }}" alt="logo" /></a>
+                        src="{{ asset('Admin/assets/images/logo-mini.svg') }}" alt="logo" /></a> --}}
+                        <a class="navbar-brand brand-logo" href="index.html">{{pr($cdata['3'])}}</a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">

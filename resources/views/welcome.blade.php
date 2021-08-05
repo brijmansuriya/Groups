@@ -35,13 +35,14 @@
             </div>
         </div>
 
-    </section><!-- End Hero -->
+    </section>
+    <!-- End Hero -->
 
     <main id="main">
         <!-- ======= Pricing Section ======= -->
+    @isset($whatsapp['0']->id)
         <section id="pricing" class="pricing section-bg">
             <div class="container" data-aos="fade-up">
-
                 <div class="section-title">
                     <h2>Whatsapp Group's</h2>
                     <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
@@ -50,11 +51,8 @@
                         Quia fugiat sit
                         in iste officiis commodi quidem hic quas.</p>
                 </div>
-
-@isset($whatsapp['0']->id)
                 <div class="row">
                     @foreach ($whatsapp as $wpg)
-                 
                     <div class="col-lg-3 col-md-6 mt-4 mb-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
                         <div class="box whatsapp">
                             {{-- <span class="advanced">New</span> --}}
@@ -66,7 +64,6 @@
                             @endif
                             <ul>
                                 <li>{{$wpg->gname}}</li>
-                                
                             </ul>
                             <div class="btn-wrap">
                                 <a href="{{$wpg->url}}" target="_blank" class="btn-buyw">Join Now</a>
@@ -74,22 +71,49 @@
                         </div>
                     </div>
                     @endforeach
-                    
                     <div class="d-flex justify-content-center">
                         {{ $whatsapp->links("pagination::bootstrap-4") }}
                     </div>
-                  
                 </div>
-                @endisset
             </div>
             <!-- Telegram Channel -->
+        </section>
+        <!-- End Pricing Section -->
+    @endisset
 
-        </section><!-- End Pricing Section -->
+        <!-- ======= Counts Section ======= -->
+        <section id="counts" class="counts">
+            <div class="container">
+                <div class="row counters">
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Clients</p>
+                    </div>
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Projects</p>
+                    </div>
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Hours Of Support</p>
+                    </div>
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Hard Workers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Counts Section -->
 
+    @isset($telegram['0']->id)
         <!--End Group Form  -->
         <section id="pricing" class="pricing section-bg">
             <div class="container" data-aos="fade-up">
-
                 <div class="section-title">
                     <h2>Telegram Channel</h2>
                     <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
@@ -98,45 +122,63 @@
                         Quia fugiat sit
                         in iste officiis commodi quidem hic quas.</p>
                 </div>
-                
-
-
-                @isset($telegram['0']->id)
-
-
-    <div class="row">
-
-        @foreach ($telegram as $tel)
-        <div class="col-lg-3 col-md-6 mt-4 mb-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-            <div class="box featured">
-                {{-- <span class="advanced">New</span> --}}
-                <h3>{{$tel->name}}</h3>
-                @if ($tel->gimg == '')
-                    <img src="Gimg/1626878239.jpg" class="gimg" />
-                @else
-                    <img src="Gimg/{{$tel->gimg}} " class="gimg" />
-                @endif
-                <ul>
-                    <li>{{$tel->gname}}</li>
-                </ul>
-                <div class="btn-wrap">
-                    <a href="{{$tel->url}}" target="_blank" class="btn-buy">Join Now</a>
+                <div class="row">
+                    @foreach ($telegram as $tel)
+                    <div class="col-lg-3 col-md-6 mt-4 mb-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+                        <div class="box featured">
+                            {{-- <span class="advanced">New</span> --}}
+                            <h3>{{$tel->name}}</h3>
+                            @if ($tel->gimg == '')
+                                <img src="Gimg/1626878239.jpg" class="gimg" />
+                            @else
+                                <img src="Gimg/{{$tel->gimg}} " class="gimg" />
+                            @endif
+                            <ul>
+                                <li>{{$tel->gname}}</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="{{$tel->url}}" target="_blank" class="btn-buy">Join Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    {{ $telegram->links("pagination::bootstrap-4") }}
                 </div>
             </div>
-        </div>
-        @endforeach
-        {{ $telegram->links("pagination::bootstrap-4") }}
-    </div>
+        </section>
+        <!-- End Pricing Section -->
     @endisset
-</div>
 
-               
-            <!-- Telegram Channel -->
+        <!-- ======= Counts Section ======= -->
+        <section id="counts" class="counts">
+            <div class="container">
+                <div class="row counters">
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Clients</p>
+                    </div>
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Projects</p>
+                    </div>
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Hours Of Support</p>
+                    </div>
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                            class="purecounter"></span>
+                        <p>Hard Workers</p>
+                    </div>
+                </div>
+            </div>
+            </section><!-- End Counts Section -->
 
-        </section><!-- End Pricing Section -->
-
-        <!-- ======= About Section ======= -->
-        <section id="about" class="about">
+          <!-- ======= About Section ======= -->
+          <section id="about" class="about">
             <div class="container">
 
                 <div class="row">
@@ -167,108 +209,8 @@
                 </div>
 
             </div>
-        </section><!-- End About Section -->
-
-         <!-- ======= Frequently Asked Questions Section ======= -->
-         <section id="faq" class="faq">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint
-                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-                        Quia fugiat sit
-                        in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="faq-list">
-                    <ul>
-                        <li data-aos="fade-up" data-aos="fade-up" data-aos-delay="100">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
-                                data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i
-                                    class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                                <p>
-                                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet
-                                    non curabitur
-                                    gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li data-aos="fade-up" data-aos-delay="200">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim
-                                nunc? <i class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
-                                    velit laoreet id
-                                    donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est
-                                    pellentesque elit
-                                    ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li data-aos="fade-up" data-aos-delay="300">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing
-                                elit? <i class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                    pulvinar elementum
-                                    integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus
-                                    pellentesque eu tincidunt.
-                                    Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis
-                                    sed odio morbi
-                                    quis
-                                </p>
-                            </div>
-                        </li>
-
-                        <li data-aos="fade-up" data-aos-delay="400">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam
-                                sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in
-                                    est ante in. Nunc
-                                    vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing
-                                    bibendum est. Purus
-                                    gravida quis blandit turpis cursus in.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li data-aos="fade-up" data-aos-delay="500">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                                data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare.
-                                Varius vel pharetra vel turpis nunc eget lorem
-                                dolor? <i class="bx bx-chevron-down icon-show"></i><i
-                                    class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo
-                                    integer malesuada
-                                    nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor
-                                    sed. Ut venenatis
-                                    tellus in metus vulputate eu scelerisque.
-                                </p>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-
-            </div>
-        </section><!-- End Frequently Asked Questions Section -->
+        </section>
+        <!-- End About Section -->
 
         <!-- ======= Counts Section ======= -->
         <section id="counts" class="counts">
@@ -303,7 +245,8 @@
                 </div>
 
             </div>
-        </section><!-- End Counts Section -->
+        </section>
+        <!-- End Counts Section -->
 
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact section-bg">
@@ -385,7 +328,8 @@
                 </div>
 
             </div>
-        </section><!-- End Contact Section -->
+        </section>
+        <!-- End Contact Section -->
 
     </main><!-- End #main -->
 
