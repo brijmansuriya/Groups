@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\AddGpModel;
-use Illuminate\Http\Request;
 use DB;
+use Illuminate\Http\Request;
+
 class AddGroupController extends Controller
 {
 
@@ -86,16 +87,5 @@ class AddGroupController extends Controller
         $result = is_delete($this->table2, $id);
         return redirect('admin/addgroup');
     }
-
-    // public function importExcel(Request $request)
-    // {
-    //     $file = $request->file('import');
-    //     if($file){
-    //         // $path = $file->getRealPath();
-    //         $data = Excel::import(new AddGpModel, $request->import);
-    //     //     echo "<pre>";
-    //     //   print_r($data);
-    //     }
-    // }
 
 }

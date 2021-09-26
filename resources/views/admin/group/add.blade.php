@@ -58,11 +58,7 @@
                     <div class="col-6">
                         <h4 class="card-title"><?= $page ?> <?= $addedit ?></h4>
                     </div>
-                    <div class="col-6 ">
-                        <button type="button" class="btn btn-gradient-primary btn-rounded btn-fw float-right mb-5" data-toggle="modal" data-target="#exampleModal">
-                            Import Data
-                          </button>
-                    </div>
+                   
                 </div>
 
                     <!-- Button trigger modal -->
@@ -131,30 +127,7 @@
 
 
   
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form class="forms-sample" action="<?= $import ?>" enctype="multipart/form-data" method="POST">
-                @csrf
-                <input accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" name="import" type="file" >
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
-                  </div>
-            </form>
-        </div>
-        
-      </div>
-    </div>
-  </div>
+
 @endsection
 @section('js')
     <script>

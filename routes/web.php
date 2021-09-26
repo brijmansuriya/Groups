@@ -29,6 +29,7 @@ use App\Http\Controllers\Admin\SettingController;
 //     return view('welcome');
 // });
 Route::get('/', [FrontendController::class, 'index']);
+
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index']);
 Route::view('demo', 'auth/register');

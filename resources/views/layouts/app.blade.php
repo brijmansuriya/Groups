@@ -8,7 +8,7 @@ $cdata = getcom()
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{pr($cdata['3'])}}</title>
+    <title>{{pr($cdata['1']->vel)}}</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Admin/assets/vendors/css/vendor.bundle.base.css') }}">
@@ -21,6 +21,7 @@ $cdata = getcom()
 </head>
 
 <body>
+    
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -29,13 +30,13 @@ $cdata = getcom()
                         src="{{ asset('Admin/assets/images/logo.svg') }}" alt="logo" /></a>
                 <a class="navbar-brand brand-logo-mini" href="index.html"><img
                         src="{{ asset('Admin/assets/images/logo-mini.svg') }}" alt="logo" /></a> --}}
-                        <a class="navbar-brand brand-logo" href="index.html">{{pr($cdata['3'])}}</a>
+                        <a class="navbar-brand brand-logo" href="index.html">{{pr($cdata['1']->vel)}}</a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                     <span class="mdi mdi-menu"></span>
                 </button>
-                <div class="search-field d-none d-md-block">
+                {{-- <div class="search-field d-none d-md-block">
                     <form class="d-flex align-items-center h-100" action="#">
                         <div class="input-group">
                             <div class="input-group-prepend bg-transparent">
@@ -45,7 +46,7 @@ $cdata = getcom()
                                 placeholder="Search projects">
                         </div>
                     </form>
-                </div>
+                </div> --}}
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown"
@@ -81,11 +82,11 @@ $cdata = getcom()
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#"
+                        {{-- <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#"
                             data-toggle="dropdown" aria-expanded="false">
                             <i class="mdi mdi-email-outline"></i>
                             <span class="count-symbol bg-warning"></span>
-                        </a>
+                        </a> --}}
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                             aria-labelledby="messageDropdown">
                             <h6 class="p-3 mb-0">Messages</h6>

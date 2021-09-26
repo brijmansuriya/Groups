@@ -57,14 +57,12 @@ function editbox($colname, $label, $fieldname, $placeholder, $value, $script = "
 function getcom()
 {
     $result = array();
-    $result = DB::table('tbl_setting')->select('id','key','vel')->where('isdelete', 0)->first();
+    $result = DB::table('tbl_setting')->select('id','key','vel')->where('isdelete', 0)->get();
     $i=0;
     foreach ($result as $item) {
         $i++;
         $data[$i] = $item;
-       
     }
-   
     return $data;
 }
 
