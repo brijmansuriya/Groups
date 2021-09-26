@@ -19,7 +19,8 @@ class SettingController extends Controller
 
     public function websitename()
     {
-        $result['wname'] = DB::table('tbl_setting')->where('key','websitename')->first();
+        $result['wname'] = DB::table('tbl_setting')->where('key','appname')->first();
+
         $result['id'] = 1;
         return view('admin/setting/website_name',$result);
     }

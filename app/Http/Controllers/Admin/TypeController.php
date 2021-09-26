@@ -25,6 +25,7 @@ class TypeController extends Controller
         if ($id != '') {
             $result['id'] = $id;
             $result['data'] = DB::table($this->table)->where('id', $id)->first();
+           
             return view('admin/type/add', $result);
         }
         $result['id'] = '';
